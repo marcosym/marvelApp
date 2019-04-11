@@ -1,16 +1,11 @@
 package my.repository.marvelapp.characterList
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
-import android.view.animation.AnimationUtils
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
@@ -29,6 +24,7 @@ import java.io.IOException
 import java.net.SocketTimeoutException
 
 class CharacterListActivity : AppCompatActivity() {
+
 
     private val adapter: CharacterAdapter by lazy {
         CharacterAdapter()
@@ -75,7 +71,7 @@ class CharacterListActivity : AppCompatActivity() {
         viewModelDesc.characterDescList
             .ioThread()
             .subscribe({
-                it?.let {list->
+                it?.let { list ->
                     adapter.submitList(list)
                     swipe.isRefreshing = false
                     progress_loading.visibility = View.GONE
@@ -124,6 +120,7 @@ class CharacterListActivity : AppCompatActivity() {
                     swipe.isRefreshing = false
                     progress_loading.visibility = View.GONE
                 }
+
             }, { throwable ->
                 when (throwable) {
                     is SocketTimeoutException -> {

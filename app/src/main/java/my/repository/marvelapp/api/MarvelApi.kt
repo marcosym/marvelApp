@@ -14,8 +14,8 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
-private const val PRIVATE_KEY = "b25c6a9a1feab1b669cdad6740683d4a3f3d2dda"
-private const val PUBLIC_KEY = "557b4e2958cffe10b5dca5560a88fa3b"
+private const val PRIVATE_KEY = "128b06d73bfe26041fbaf2c776d868a0e26c4a75"
+private const val PUBLIC_KEY = "5bb58cf740634499feec2a17233eab61"
 
 interface MarvelApi {
 
@@ -62,7 +62,7 @@ interface MarvelApi {
 
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://gateway.marvel.com/v1/public/")
+                .baseUrl("https://gateway.marvel.com/v1/public/")
                 .client(authOkHttpClient?.build()!!)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
