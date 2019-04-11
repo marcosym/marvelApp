@@ -9,3 +9,5 @@ Aplicativo que mostra personagens da Marvel.
 - RxJava/RxAndroid
 - Retrofit
 - Glide
+
+Ao clicar no filtro ele lista os personagens por data de modificação em ordem decrescente.
