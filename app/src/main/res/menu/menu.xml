@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="example.javatpoint.com.optionmenu.MainActivity">
+
+    <item  android:id="@+id/desc"
+           android:title="Order by desc"
+           app:showAsAction="withText"
+           android:icon="@android:drawable/btn_plus"/>
+
+    <item  android:id="@+id/asc"
+           android:title="Order by asc"
+           app:showAsAction="withText"
+           android:icon="@android:drawable/btn_plus"/>
+
+
+</menu>

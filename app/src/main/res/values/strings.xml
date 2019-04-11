@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Marvel Heroes</string>
+    <string name="error_title_conn">Erro de conexão!</string>
+    <string name="error_conn_msg">Parece que sua conexão está lenta. Tente mais tarde!</string>
+    <string name="error_char_not_avaiable">Nenhum personagem disponível :(</string>
+    <string name="error_char_title">Ops!</string>
+    <string name="error_description">DESCRIÇÃO NÃO DISPONÍVEL</string>
+</resources>

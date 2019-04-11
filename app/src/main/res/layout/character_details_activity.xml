@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraint_root_char"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collaping_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                    android:id="@+id/iv_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="true"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.2"
+                    android:background="@android:color/black"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"/>
+
+            <ImageView
+                    android:id="@+id/detail_char_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    app:layout_collapseMode="parallax"/>
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_marginTop="24dp"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="pin"
+                    app:layout_scrollFlags="scroll"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                        android:id="@+id/toolbar_left_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_arrow_back_red"/>
+
+                <TextView
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:layout_alignEnd="@+id/toolbar_right_icon"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="24dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/marvel_regular"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:text="MARVEL HEROES"
+                        android:lines="1"
+                        android:textAllCaps="true"
+                        android:maxLines="1"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="18sp"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_heroes"
+                android:layout_width="match_parent"
+                android:fitsSystemWindows="true"
+                android:layout_height="wrap_content"
+                android:paddingBottom="90dp">
+
+            <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:theme="@style/AppTheme"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="16dp"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/marvel_regular"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="MARVEL SUPER HEROES NAME"
+                    android:textSize="42sp"
+                    android:gravity="center"
+                    android:id="@+id/character_title_name"
+                    android:textColor="@color/red"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    android:layout_marginStart="0dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    android:layout_marginEnd="0dp"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/marvel_regular"
+                    android:textAllCaps="true"
+                    android:id="@+id/character_description"
+                    tools:text="MARVEL SUPER HEROES NAME"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    android:layout_marginStart="0dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    android:layout_marginEnd="0dp" app:layout_constraintHorizontal_bias="0.573"
+                    android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/character_title_name"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:text="Comics"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/character_description"
+                    android:id="@+id/comics"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/marvel_regular"
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    android:layout_marginStart="0dp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:id="@+id/recycler_view_comics"
+                    app:layoutManager="LinearLayoutManager"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toBottomOf="@+id/comics"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintHorizontal_bias="0.0">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:text="Series"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_view_comics"
+                    android:id="@+id/series"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/marvel_regular"
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    android:layout_marginStart="0dp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:id="@+id/recycler_view_series"
+                    app:layoutManager="LinearLayoutManager"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toBottomOf="@+id/series"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintHorizontal_bias="0.0">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:text="Events"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_view_series"
+                    android:id="@+id/events"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/marvel_regular"
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    android:layout_marginStart="0dp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:id="@+id/recycler_view_events"
+                    app:layoutManager="LinearLayoutManager"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toBottomOf="@+id/events"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintHorizontal_bias="0.0">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:text="Stories"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_view_events"
+                    android:id="@+id/stories"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/marvel_regular"
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    android:layout_marginStart="0dp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:id="@+id/recycler_view_stories"
+                    app:layoutManager="LinearLayoutManager"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toBottomOf="@+id/stories"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintHorizontal_bias="0.0">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
